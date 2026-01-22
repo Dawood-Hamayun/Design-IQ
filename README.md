@@ -2,29 +2,33 @@
 
 DesignIQ is a full-stack product that transforms raw UX research into clear, structured insight. It automates the analysis of surveys and recorded user interviews, helping teams move from unstructured research artifacts to summaries, patterns, and persona reports.
 
-Rather than focusing on collecting research, DesignIQ explores what happens **after** research is done — how insight is extracted, synthesized, and communicated.
+Instead of focusing on collecting research, DesignIQ explores what happens **after** research is done — how insight is extracted, synthesized, and communicated.
 
 ---
 
 ## The Problem Space
 
-UX research often stalls after data collection:
+UX research often stalls once data has been collected:
 
 - survey CSVs require manual cleanup and interpretation  
 - interview recordings take hours to review  
 - insights live across notes, spreadsheets, and documents  
 - personas are created manually and inconsistently  
 
+The result is slow synthesis and lost signal.
+
 DesignIQ investigates how these steps can be systematized without losing context or nuance.
 
 ---
 
-## What DesignIQ Does
+## Core Workflows
 
-DesignIQ supports two core research workflows:
+DesignIQ supports two primary research workflows:
 
-- **Survey analysis** — turning raw CSV data into visual summaries and insights  
-- **Interview analysis** — converting recorded conversations into sentiment, patterns, and personas  
+| Workflow | Input | Output |
+|--------|------|--------|
+| **Survey Analysis** | CSV files | Visual summaries and structured insights |
+| **Interview Analysis** | Recorded interviews | Transcripts, sentiment, patterns, personas |
 
 Both workflows are processed independently but stored under a unified research model.
 
@@ -34,38 +38,40 @@ Both workflows are processed independently but stored under a unified research m
 
 Survey analysis focuses on extracting signal from unstructured CSV data.
 
-Key capabilities:
+What happens when a CSV is uploaded:
 
-- automatic column inspection  
-- differentiation between categorical and numeric data  
-- heuristic-based visualization selection  
-- per-column summaries  
-- exportable insight reports  
+- columns are inspected automatically  
+- categorical and numeric data are identified  
+- visualization types are chosen heuristically  
+- per-column summaries are generated  
+- results can be exported as a report  
 
-Visualization logic is driven by data shape rather than predefined schemas.
+Visualization logic is driven by **data shape**, not predefined schemas.
+
+This allows DesignIQ to work with arbitrary survey formats.
 
 ---
 
 ## Interview Analysis
 
-Interview analysis converts recorded interviews into structured insight.
+Interview analysis converts recorded conversations into structured insight.
 
 The pipeline includes:
 
 1. asynchronous transcription  
 2. segmentation into question–answer units  
-3. sentiment analysis at response and session level  
+3. sentiment analysis at both response and session level  
 4. emotion distribution over time  
 5. behavioral pattern extraction  
 6. AI-assisted summarization  
 
-This reduces long-form interviews into concise, readable outputs.
+Long-form interviews are reduced into concise, readable outputs that are easier to review and share.
 
 ---
 
 ## Persona Generation
 
-Personas are generated from full interview context rather than isolated responses.
+Personas are generated from **full interview context**, not isolated responses.
 
 A typical persona includes:
 
@@ -79,7 +85,7 @@ Personas are stored as first-class artifacts and can be revisited independently 
 
 ---
 
-## Backend Overview
+## Backend Responsibilities
 
 The backend is responsible for:
 
@@ -94,16 +100,16 @@ Analysis records are immutable once generated, preserving traceability between i
 
 ---
 
-## Frontend Overview
+## Frontend Responsibilities
 
 The frontend is designed for **reading and understanding results**, not editing data.
 
-Its responsibilities include:
+Its role is to:
 
-- presenting survey summaries  
-- displaying interview insights  
-- rendering persona reports  
-- exporting reports for sharing  
+- present survey summaries clearly  
+- display interview insights and patterns  
+- render persona reports  
+- support exporting results for sharing  
 
 The interface is intentionally minimal to keep focus on insight rather than tooling.
 
@@ -111,20 +117,22 @@ The interface is intentionally minimal to keep focus on insight rather than tool
 
 ## Data Model (Conceptual)
 
-Core stored entities include:
+DesignIQ stores research outputs as complete snapshots.
+
+Core entities include:
 
 - User  
 - SurveyAnalysis  
 - InterviewAnalysis  
 - PersonaReport  
 
-Each analysis is stored as a complete snapshot of results rather than incremental mutations.
+Each analysis represents a finished result, not an evolving document.
 
 ---
 
 ## Design Philosophy
 
-DesignIQ is guided by a few core principles:
+DesignIQ is guided by a few principles:
 
 - insights should be easy to skim  
 - structure matters more than volume  
@@ -137,7 +145,7 @@ DesignIQ is guided by a few core principles:
 
 DesignIQ demonstrates:
 
-- applied NLP in a product context  
+- applied NLP in a real product context  
 - automated survey interpretation  
 - sentiment and behavioral pattern extraction  
 - AI-assisted synthesis workflows  
