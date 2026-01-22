@@ -4,6 +4,8 @@ DesignIQ is a full-stack product that transforms raw UX research into clear, str
 
 Instead of focusing on collecting research, DesignIQ explores what happens **after** research is done — how insight is extracted, synthesized, and communicated.
 
+<p align="center"> <img src="./assets/designiq.gif" width="800"> <br/> <em>Demo — DesignIQ</em> </p>
+
 ---
 
 ## The Problem Space
